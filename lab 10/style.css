@@ -1,0 +1,327 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f0f2f5;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-container,
+.app-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input,
+button,
+select {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    background: #e7e9eb;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.user-card img {
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.filters {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filters > * {
+    flex: 1 1 150px;
+}
+
+/*cards*/
+
+body {
+    background: #eaeaea;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px;
+}
+
+.main-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    margin-top: 50px;
+}
+
+.forms-block {
+    width: 450px;
+    height: auto;
+    background: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.nav-block {
+    display: flex;
+
+    width: 100%;
+    height: 50px;
+}
+
+.btn {
+    flex: 1;
+
+    font-weight: bold;
+    color: grey;
+    background: #ffffff;
+    border: none;
+}
+
+.btn.active {
+    color: #6cb3ff;
+    background: rgba(60, 160, 255, 0.1);
+    border: #6cb3ff solid 2px;
+}
+
+.logout-button {
+    position: fixed;
+    width: auto;
+    top: 10px;
+    right: 10px;
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#paginationContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
+    /*flex-wrap: wrap;*/
+}
+#paginationContainer button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+#paginationContainer .active-page {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+form {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginForm {
+    display: none;
+}
+
+.form-group {
+    margin: 4px 0;
+    width: 100%;
+
+    display: grid;
+}
+
+
+input[type=submit] {
+    background-color: #6cb3ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type=submit]:hover {
+    background-color: #569fe0;
+    transform: translateY(-2px);
+}
+
+input[type=submit]:active {
+    background-color: #3f87c0;
+    transform: translateY(0);
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group label {
+    font-weight: initial;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: rgb(120 0 207);
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    height: 14px;
+}
+
+.success-message {
+    color: green;
+    font-size: 13px;
+    margin-top: 5px;
+    height: 14px;
+}
+
+form.validated input[type="text"]:invalid,
+form.validated input[type="email"]:invalid,
+form.validated input[type="password"]:invalid,
+form.validated input[type="date"]:invalid,
+form.validated input[type="tel"]:invalid {
+    border: 2px solid red;
+}
+
+form.validated input[type="text"]:valid,
+form.validated input[type="email"]:valid,
+form.validated input[type="password"]:valid,
+form.validated input[type="date"]:valid,
+form.validated input[type="tel"]:valid {
+    border: 2px solid green;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .logout-button {
+        position: static;
+        display: block;
+        margin: 10px auto;
+    }
+
+    .main-block {
+        margin-top: 20px;
+    }
+
+    .forms-block {
+        padding: 15px;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .user-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

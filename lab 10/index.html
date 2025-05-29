@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Соцмережа: Пошук друзів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Форма реєстрації/логіну -->
+<div class="main-block">
+    <div class="forms-block">
+        <div class="nav-block">
+            <button id="signupNavBtn" class="btn active">Signup</button>
+            <button id="loginNavBtn" class="btn">Login</button>
+        </div>
+        <form class="signupForm" name="signupForm" novalidate>
+
+            <h2>Create an account</h2>
+
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter first name"
+                       minlength="3" maxlength="15" required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter last name"
+                       minlength="3" maxlength="15" required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+380..."
+                       pattern="^\+380\d{9}$" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter email"
+                       data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required
+                />
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="birthDate">Date of Birth</label>
+                <input type="date" id="birthDate" name="birthDate" required />
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Sex</label>
+                <div class="radio-group">
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="sex" value="male" checked required />
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="sex" value="female" required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select country</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="USA">USA</option>
+                    <option value="Germany">Germany</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <select id="city" name="city" disabled required>
+                    <option value="">Select city</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password"
+                       minlength="6" required
+                />
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter password"
+                       minlength="6" required
+                />
+                <div class="error-message"></div>
+            </div>
+
+            <input id="signupBtn" type="submit" value="Sign Up">
+        </form>
+
+
+        <form class="loginForm" name="loginForm" novalidate>
+            <h2>Login here</h2>
+
+            <div class="form-group">
+                <label for="userName">Username</label>
+                <input type="text" id="userName" name="userName" placeholder="Enter username" required>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="passwordLogin">Password</label>
+                <input type="password" id="passwordLogin" name="passwordLogin" placeholder="Enter password"
+                       minlength="6" required>
+                <div class="error-message"></div>
+            </div>
+
+            <input id="loginBtn" type="submit" value="Login">
+        </form>
+    </div>
+</div>
+<div id="snackbar"></div>
+
+<!-- Основна частина з пошуком і картками -->
+<div id="app" class="app-container hidden">
+    <h2>Пошук друзів</h2>
+    <button id="logoutBtn" class="logout-button">Logout</button>
+    <div class="filters">
+        <input type="text" id="searchInput" placeholder="Пошук за ім'ям або прізвищем" />
+        <input type="text" id="emailFilter" placeholder="Фільтр за email">
+        <input type="text" id="yearFilter" placeholder="Рік народження">
+        <input type="text" id="countryFilter" placeholder="Країна">
+        <input type="text" id="cityFilter" placeholder="Місто">
+        <select id="sortSelect">
+            <option value="">Сортувати</option>
+            <option value="age-asc">Вік: за зростанням</option>
+            <option value="age-desc">Вік: за спаданням</option>
+            <option value="name-asc">Ім'я: А→Я</option>
+            <option value="name-desc">Ім'я: Я→А</option>
+        </select>
+        <input type="number" id="minAge" placeholder="Мінімальний вік" min="0" max="100" />
+        <input type="number" id="maxAge" placeholder="Максимальний вік" min="0" max="100" />
+    </div>
+    <div id="usersContainer"></div>
+    <div id="paginationContainer" class="pagination"></div>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
